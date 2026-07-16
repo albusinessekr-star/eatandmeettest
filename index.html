@@ -348,13 +348,6 @@ input.error,textarea.error{border-color:var(--err)!important;border-bottom-color
 .social-ico svg{width:17px;height:17px;fill:currentColor;}
 .map-box{border:1px solid var(--rule);height:420px;overflow:hidden;position:relative;}
 .map-box iframe{width:100%;height:100%;border:none;filter:grayscale(.35) sepia(.08) contrast(1.02);}
-.map-fallback{display:none;position:absolute;inset:0;flex-direction:column;align-items:center;justify-content:center;gap:.7rem;text-align:center;padding:1.6rem;text-decoration:none;color:var(--ink);background:linear-gradient(135deg,var(--paper-2),var(--card));}
-.map-box.local iframe{display:none;}
-.map-box.local .map-fallback{display:flex;}
-.map-fallback .mf-pin{font-size:2rem;line-height:1;}
-.map-fallback .mf-title{font-family:var(--ff-disp);font-size:1.5rem;color:var(--sea);}
-.map-fallback .mf-sub{font-size:.9rem;color:var(--ink-2);max-width:320px;}
-.map-fallback .mf-btn{margin-top:.5rem;font-family:var(--ff-caps);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:#fff;background:var(--sea);padding:.7rem 1.4rem;border-radius:2px;}
 
 /* ── RÉSERVATION ── */
 .form-wrap{max-width:660px;margin:0 auto;}
@@ -1177,13 +1170,7 @@ body{background:
       </div>
       <div class="reveal">
         <div class="map-box" id="mapBox">
-          <iframe id="mapFrame" src="https://maps.google.com/maps?q=34.2696914,-6.5912728&z=16&hl=fr&output=embed" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Eat & Meet — Kénitra, bord de l'Oued Sebou"></iframe>
-          <a class="map-fallback" href="https://maps.google.com/?cid=3209114237218672682" target="_blank" rel="noopener">
-            <span class="mf-pin">📍</span>
-            <span class="mf-title">Eat &amp; Meet — Kénitra</span>
-            <span class="mf-sub">Bord de l'Oued Sebou · Route de la base aérienne, Kénitra</span>
-            <span class="mf-btn">Ouvrir dans Google Maps</span>
-          </a>
+          <iframe id="mapFrame" src="https://www.google.com/maps?ll=34.2696914,-6.5912728&z=17&t=m&hl=fr&gl=ma&mapclient=embed&q=Eat+%26+Meet+Coffee,+Seafood,+Grill+and+Sushi+K%C3%A9nitra&output=embed" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Eat & Meet — Kénitra, bord de l'Oued Sebou"></iframe>
         </div>
       </div>
     </div>
@@ -1355,7 +1342,7 @@ var QRCode;!function(){function a(a){this.mode=c.MODE_8BIT_BYTE,this.data=a,this
 </script>
 <script>
 /* ===== PARAMÈTRES À PERSONNALISER ===== */
-const WHATSAPP_NUMBER="212707260681";
+const WHATSAPP_NUMBER="33612896260";
 const RESTO_EMAIL="contact@eatandmeet.ma";
 
 /* ===== CARTE : familles → sous-catégories ===== */
@@ -1750,15 +1737,7 @@ const siteUrl=isWebHost?(window.location.href.split('#')[0]||FALLBACK_URL):FALLB
 document.getElementById('qr-url').textContent=siteUrl.replace(/^https?:\/\//,'').replace(/\/$/,'');
 try{ new QRCode(document.getElementById('qr-box'),{text:siteUrl,width:170,height:170,colorDark:'#13201D',colorLight:'#ffffff',correctLevel:QRCode.CorrectLevel.H}); }catch(e){ console.warn('QR non généré',e); }
 
-/* ===== Carte : repli si la carte ne se charge pas (local file:// OU blocage en ligne) ===== */
-(function(){
-  var mb=document.getElementById('mapBox'); var fr=document.getElementById('mapFrame');
-  if(!mb||!fr) return;
-  if(window.location.protocol==='file:'){ mb.classList.add('local'); return; }
-  var loaded=false;
-  fr.addEventListener('load',function(){ loaded=true; });
-  setTimeout(function(){ if(!loaded) mb.classList.add('local'); }, 5000);
-})();
+/* ===== Carte : rien à faire, Google Maps se charge tout seul ===== */
 
 /* ===== Reveal + nav + progress ===== */
 const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('visible');obs.unobserve(x.target);}});},{threshold:0.1});
