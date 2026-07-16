@@ -229,7 +229,7 @@ section{padding:8rem 2.6rem;}
 .glovo-copied{position:absolute;top:-8px;right:8px;background:var(--sea);color:#fff;font-size:.7rem;padding:.25rem .6rem;border-radius:20px;opacity:0;pointer-events:none;transition:opacity .3s ease;transform:translateY(-4px);}
 .glovo-copied.show{opacity:1;transform:translateY(0);}
 .glovo-modal-go{width:100%;}
-.glovo-band{background:var(--paper-2);padding:5rem 0;border-top:1px solid var(--rule);}
+.glovo-band{background:var(--paper-2);padding:5rem 2.6rem;border-top:1px solid var(--rule);}
 .glovo-wrap{display:flex;align-items:center;gap:3rem;flex-wrap:wrap;}
 .glovo-left{flex:1;min-width:280px;}
 .glovo-title{font-family:var(--ff-disp);font-size:2.2rem;color:var(--ink);margin:.5rem 0 1rem;line-height:1.1;}
@@ -241,7 +241,7 @@ section{padding:8rem 2.6rem;}
 .glovo-badge .gb-pin{font-size:2.3rem;line-height:1;}
 .glovo-badge .gb-city{font-family:var(--ff-disp);font-size:1.5rem;}
 .glovo-badge .gb-time{font-family:var(--ff-caps);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;}
-@media(max-width:640px){ .glovo-band{padding:3.5rem 0;} .glovo-wrap{gap:2rem;} .glovo-title{font-size:1.8rem;} .glovo-btn-lg{width:100%;} }
+@media(max-width:640px){ .glovo-band{padding:3.5rem 1.4rem;} .glovo-wrap{gap:2rem;} .glovo-title{font-size:1.8rem;} .glovo-btn-lg{width:100%;} .glovo-right{width:100%;} }
 .cart-mode button{flex:1;padding:.55rem .3rem;background:transparent;border:1px solid var(--rule-2);color:var(--ink-2);
   font-family:var(--ff-caps);font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:all var(--ease);}
 .cart-mode button.on{background:var(--ink);color:var(--paper);border-color:var(--ink);}
@@ -347,6 +347,7 @@ input.error,textarea.error{border-color:var(--err)!important;border-bottom-color
 .social-ico:hover{background:var(--sea);border-color:var(--sea);color:var(--paper);}
 .social-ico svg{width:17px;height:17px;fill:currentColor;}
 .map-box{border:1px solid var(--rule);height:420px;overflow:hidden;position:relative;}
+@media(max-width:640px){ .map-box{height:280px;} }
 .map-box iframe{width:100%;height:100%;border:none;filter:grayscale(.35) sepia(.08) contrast(1.02);}
 
 /* ── RÉSERVATION ── */
